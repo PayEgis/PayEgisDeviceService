@@ -9,13 +9,31 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "WebKit/WebKit.h"
-
+#import "PayegisConstant.h"
 typedef void (^PayegisSecurityInitCompletionBlock)(NSError *error);
 typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
 
 
 @interface PayegisDID : NSObject
+/**
+ SDK本地服务初始化方法
+ @param appid APPID
+ @param appKey APPKEY
+ @param hostUrl 本地服务地址
+ @param sessionId 关联ID，由用户构造
+ @param scence 业务场景
+ */
++(void)initWithAppId:(NSString *)appid AppKey:(NSString *)appKey HostUrl:(NSString *)hostUrl SessionId:(NSString *)sessionId Scence:(PayEgisScence)scence completionBlock:(PayegisSecurityInitCompletionBlock)completionBlock;
 
+/**
+ SDK云服务初始化方法
+ 
+ @param appid APPID
+ @param appKey APPKEY
+ @param sessionId 关联ID，由用户构造
+ @param scence 业务场景
+ */
++(void)initWithAppId:(NSString *)appid AppKey:(NSString *)appKey SessionId:(NSString *)sessionId Scence:(PayEgisScence)scence completionBlock:(PayegisSecurityInitCompletionBlock)completionBlock;
 /**
  设置SDK上下文环境
  */

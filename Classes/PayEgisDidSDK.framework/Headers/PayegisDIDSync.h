@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PayegisConstant.h"
 
 typedef void (^PayegisSecurityInitCompletionBlockSync)(NSError *error);
 typedef void (^PayegisSecurityUninitCompletionBlockSync)(NSError *error);
@@ -16,6 +16,25 @@ typedef void (^PayegisSecurityUninitCompletionBlockSync)(NSError *error);
 
 
 @interface PayegisDIDSync : NSObject
+/**
+ SDK本地服务初始化方法
+ @param appid APPID
+ @param appKey APPKEY
+ @param hostUrl 本地服务地址
+ @param sessionId 关联ID，由用户构造
+ @param scence 业务场景
+ */
++(void)initWithAppId:(NSString *)appid AppKey:(NSString *)appKey HostUrl:(NSString *)hostUrl SessionId:(NSString *)sessionId Scence:(PayEgisScence)scence completionBlock:(PayegisSecurityInitCompletionBlockSync)completionBlock;
+
+/**
+ SDK云服务初始化方法
+ 
+ @param appid APPID
+ @param appKey APPKEY
+ @param sessionId 关联ID，由用户构造
+ @param scence 业务场景
+ */
++(void)initWithAppId:(NSString *)appid AppKey:(NSString *)appKey SessionId:(NSString *)sessionId Scence:(PayEgisScence)scence completionBlock:(PayegisSecurityInitCompletionBlockSync)completionBlock;
 /**
  设置SDK上下文环境
  */
