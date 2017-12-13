@@ -17,22 +17,22 @@ PayEgis设备指纹官方SDK
 ## <font color=#le90ff size=4 >集成方式</font>
 在 Podfile 文件中加入
 
-```
+```Ruby
 pod 'PayEgisDeviceService'
 ```
 安装
 
-```
+```Ruby
 pod install
 ```
 如果无法安装 SDK 最新版本，运行以下命令更新本地的 CocoaPods 仓库列表
 
-```
+```Ruby
 pod repo update
 ```
 <font color=#le90ff size=3 >示例</font>
 
-```
+```Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [PayegisDID initWithAppId:appid AppKey:appkey completionBlock:^(NSError *error) {
         if(!error){
@@ -48,7 +48,7 @@ pod repo update
 appId | 通付盾分配给商户的唯一应用ID号
 appKey | 通付盾分配给商户的Key值
 
-```
+```Objective-C
 - (void)viewDidLoad {
     [PayegisDID serviceWithSessionId:self.sessionStr Scence:PayEgisScencePay completionBlock:^(NSError *error) {
         if(!error){
@@ -82,7 +82,7 @@ scence | 描述埋点场景，枚举值
 ## <font color=#le90ff size=4 >Webview设备指纹集成</font>
 如需在APP内以Webview形式集成设备指纹，需在webview loadRequest方法之前调用设备指纹SDK如下方法。示例代码如下:
 
-``` 
+``` Objective-C
 NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContextAppKey:appkey};
 [PayegisDID setWebView:context view:webView];
 
@@ -95,7 +95,7 @@ NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContext
 ## <font color=#le90ff size=4>网络监控/断线重发功能</font>
 设备指纹SDK默认具有防网络断线两次重发机制，首次-间隔10s-间隔20s，单次成功后停止重发。网络监控持续重发   本功能开启后会持续监控网络情况，监测网络正常时即会重启第1点操作(因需持续监控，考虑耗电量及内存占用，至多重复5次第一点操作仍失败后，停止监控)。调用方法（请在初始化设备指纹之前执行）。
 
-```
+```Objective-C
 [PayegisDID setIsBgTry:YES]; 
 // 不调用该方法，或设置为NO为不启用监控功能
 ```
