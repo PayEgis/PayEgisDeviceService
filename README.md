@@ -63,8 +63,9 @@ appKey | 通付盾分配给商户的Key值
 ---|---
 sessionId | 关联Id，用户自行构造，尽可能唯一
 scence | 描述埋点场景，枚举值
-SDK 通过回调（callback）方式通知上层 API 调用结果
-所有调用错误都会以 NSError 的形式暴露。针对不同场景，我们将错误进行分类。
+
+>SDK 通过回调（callback）方式通知上层 API 调用结果
+>所有调用错误都会以 NSError 的形式暴露。针对不同场景，我们将错误进行分类。
 
 状态码 | 含义（从NSError中userinfo获取的错误信息）
 ---|---
