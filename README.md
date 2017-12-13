@@ -1,6 +1,6 @@
 # PayEgisDeviceService
 PayEgis设备指纹官方SDK
-# 通付盾设备指纹iOS集成手册
+
 
 <font color=#FF450 size=3 >v5.4.5</font>
 ## <font color=#le90ff size=4 >概要介绍</font>
