@@ -6,15 +6,6 @@ PayEgis设备指纹官方SDK
 >## <font color=#le90ff size=4 >概要介绍</font>
 >- 通付盾提供的设备指纹是一种基于网籍库的设备凭证识别技术，通过快速获取上网设备的软件、硬件、网络等多层次指纹信息，经过一定的复杂规则算法，为每一台入网设备生成跨平台的唯一标识设备ID，该设备指纹识别服务简称为DeviceId服务。通付盾设备指纹 SDK 支持多种终端类型，包括：Web、Android、iOS等多种类型。
 设备指纹服务接口包括：设备指纹采集接口和设备指纹查询接口。设备指纹的采集可通过WEB端JS集成、iOS SDK集成、Android SDK集成三种方式实现接口调用。具体集成方法可分别参考《通付盾设备指纹前端集成手册--Web》、《通付盾设备指纹前端集成手册--iOS》和《通付盾设备指纹前端集成手册--Android》。
->## <font color=#le90ff size=4 >服务架构</font>
-
-```
-graph LR;
-  设备指纹采集--传入appid,sessionid获取用户设备信息-->通付盾云服务后台;
-  设备指纹查询--传入appid,sessionid获取用户设备信息-->通付盾云服务后台;
-  通付盾云服务后台-.返回设备信息.->设备指纹查询;
-  通付盾云服务后台-.是否采集成功.->设备指纹采集;
-```
 >## <font color=#le90ff size=4 >交互流程</font>
 1. 用户通过移动端App（已嵌入设备指纹采集接口）访问商户网站，通付盾设备指纹sdk采集用户设备信息；
 注：步骤3中，sessionId为设备指纹生成所用的tokenID，后续客户可根据该tokenID查询当次对应设备指纹。tokenID由客户生成，使用sessionId或其他UUID均可。
@@ -23,26 +14,7 @@ graph LR;
 4. 商户网站向通付盾设备指纹云服务后台发起查询设备指纹的请求。
 5. 通付盾设备指纹云服务后台返回设备指纹和设备信誉。
 
-```
-sequenceDiagram
-　　　客户->>商户app:1.访问商户app
-　　　商户app->>商户app:2.采集设备信息
-　　　商户app->>通付盾云服务平台:3.传入appid+sessionid采集用户设备信息
-　　　通付盾云服务平台->>通付盾云服务平台:4.生成Deviceid
-　　　客户->>商户app:5.用户操作应用程序
-　　　商户app->>商户服务器:6.提交业务请求
-　　　商户服务器->>通付盾云服务平台:7.请求查询Deviceid
-　　　通付盾云服务平台-->>商户服务器:8.返回设备指纹和设备信誉
-　　　商户服务器->>商户服务器:9.商户后续业务逻辑
-```
-
->## <font color=#le90ff size=4 >接入流程</font>
->- 试用申请，拨打 <font color=#le33ff size=2 >400-831-8116</font> 获取试用信息；通过商务沟通获取试用信息。
->- 开发包获取，由技术支持完成试用审核和需求确认后将AppId、AppKey 和设备指纹开发包发送给客户，开发包中包含引用源文件、Demo 程序和开发使用手册；试用账户信息直接发送至客户注册的企业邮箱。
->- 集成设计，客户在获取开发资料后，需要根据实际业务需求对嵌入设备指纹服务应用流程进行设计，在这之前可以与通付盾技术支持工程师联系，了解产品的集成方法和注意事项。
->- 系统接入，客户在业务系统中接入设备指纹服务。
 >## <font color=#le90ff size=4 >集成方式</font>
->> <font color=#le90ff size=3 >自动集成</font>
 >- 在 Podfile 文件中加入
 
 ```
@@ -58,21 +30,6 @@ pod install
 ```
 pod repo update
 ```
-
-
->> <font color=#le90ff size=3 >手动集成</font>
->- 获取zip开发工具包，工具包中包含3部分内容 ：头文件和库文件，资源包
->
-
-类型 | 文件名 | 描述
----|---|---
-头文件 | PayegisDID.h| 包含PayegisDID类的定义
-静态库 | libPayegisDID.a| 安全SDK库文件
-头文件 | PayegisConstant.h| 常量文件
-资源包 | PayeigsDID.bundle| 资源文件
->- 为工程文件添加依赖库
-libsqlite3.0.tbd、libPayegisDID.a、WebKit.framework。
->- info.plist文件配置 添加 ==Location When In Use Usage Description== 和==Motion Usage Description== 的描述。
 >> <font color=#le90ff size=3 >示例</font>
 
 ```
