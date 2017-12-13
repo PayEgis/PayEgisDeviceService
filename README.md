@@ -4,7 +4,7 @@ PayEgis设备指纹官方SDK
 
 <font color=#FF450 size=3 >v5.4.5</font>
 ## <font color=#le90ff size=4 >概要介绍</font>
-- 通付盾提供的设备指纹是一种基于网籍库的设备凭证识别技术，通过快速获取上网设备的软件、硬件、网络等多层次指纹信息，经过一定的复杂规则算法，为每一台入网设备生成跨平台的唯一标识设备ID，该设备指纹识别服务简称为DeviceId服务。通付盾设备指纹 SDK 支持多种终端类型，包括：Web、Android、iOS等多种类型。
+通付盾提供的设备指纹是一种基于网籍库的设备凭证识别技术，通过快速获取上网设备的软件、硬件、网络等多层次指纹信息，经过一定的复杂规则算法，为每一台入网设备生成跨平台的唯一标识设备ID，该设备指纹识别服务简称为DeviceId服务。通付盾设备指纹 SDK 支持多种终端类型，包括：Web、Android、iOS等多种类型。
 设备指纹服务接口包括：设备指纹采集接口和设备指纹查询接口。设备指纹的采集可通过WEB端JS集成、iOS SDK集成、Android SDK集成三种方式实现接口调用。具体集成方法可分别参考《通付盾设备指纹前端集成手册--Web》、《通付盾设备指纹前端集成手册--iOS》和《通付盾设备指纹前端集成手册--Android》。
 ## <font color=#le90ff size=4 >交互流程</font>
 1. 用户通过移动端App（已嵌入设备指纹采集接口）访问商户网站，通付盾设备指纹sdk采集用户设备信息；
@@ -30,7 +30,7 @@ pod install
 ```
 pod repo update
 ```
->> <font color=#le90ff size=3 >示例</font>
+<font color=#le90ff size=3 >示例</font>
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -79,7 +79,7 @@ SDK 通过回调（callback）方式通知上层 API 调用结果
 
 
 ## <font color=#le90ff size=4 >Webview设备指纹集成</font>
-- 如需在APP内以Webview形式集成设备指纹，需在webview loadRequest方法之前调用设备指纹SDK如下方法。示例代码如下:
+如需在APP内以Webview形式集成设备指纹，需在webview loadRequest方法之前调用设备指纹SDK如下方法。示例代码如下:
 
 ``` 
 NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContextAppKey:appkey};
@@ -99,7 +99,7 @@ NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContext
 // 不调用该方法，或设置为NO为不启用监控功能
 ```
 ## <font color=#le90ff size=4 >常见问题</font>
-- <font color=#FF4500 size=2 >ld: framework not found FileProvider for architecture arm64</font>
+<font color=#FF4500 size=2 >ld: framework not found FileProvider for architecture arm64</font>
 
 出现这个问题是因为静态库是用Xcode9打包的。如果用xcode8编译的话就会出现这个问题，建议升级xcode最新版本，如果不升级方法如下：
 
