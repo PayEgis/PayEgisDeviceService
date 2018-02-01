@@ -13,7 +13,34 @@ typedef void (^filterEnd)(BOOL isPass);
 
 @interface PayegisEventCenter : NSObject
 
+/**
+ 文本过滤回调
+ */
 @property (nonatomic,copy) filterEnd filterEnd;
+
+/**
+ 事件记录条目
+ */
+@property (nonatomic,assign) NSInteger eventCount;
+
+/**
+ 缓存策略为Batch时 触发上报的临界值
+ */
+@property (nonatomic,assign) NSInteger batchEventCount;
+
+/**
+ 开启事件上报
+ */
++ (void)trackStart;
+
+
+/**
+ 事件上报单例
+
+ @return 事件上报单例
+ */
++(instancetype)sharedInstance;
+
 #pragma mark - 配置选项
 
 
@@ -22,6 +49,15 @@ typedef void (^filterEnd)(BOOL isPass);
  @param strategy 策略枚举值
  */
 + (void)setUplodStrategy:(PGSUplodStrategy)strategy;
+
+
+/**
+ 设置上报临界值
+
+ @param count 触发上报的最小缓存事件数量
+ */
++ (void)setBatchEventCount:(NSUInteger)count;
+
 #pragma mark - 账号和用户相关
 
 /**
