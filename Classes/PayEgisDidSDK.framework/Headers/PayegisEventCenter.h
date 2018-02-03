@@ -56,7 +56,7 @@ typedef void (^filterEnd)(BOOL isPass);
 
  @param count 触发上报的最小缓存事件数量
  */
-+ (void)setBatchEventCount:(NSUInteger)count;
++ (void)setBatchEventCount:(NSInteger)count;
 
 #pragma mark - 账号和用户相关
 
