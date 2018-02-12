@@ -129,7 +129,7 @@ typedef void (^filterEnd)(BOOL isPass);
  @param dictionary 事件的参数
  @return PGSErrorCode错误码
  */
-+ (PGSErrorCode)trackEventDuration:(NSInteger)msec eventID:(NSString *)eventID values:(NSDictionary *)dictionary;
++ (PGSErrorCode)trackEventDuration:(double)msec eventID:(NSString *)eventID values:(NSDictionary *)dictionary;
 
 #pragma mark - 使用时长
 

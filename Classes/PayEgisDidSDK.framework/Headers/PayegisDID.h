@@ -59,7 +59,7 @@ typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
 + (NSDictionary *)context;
 
 /**
- SDK初始化
+ SDK初始化 已废弃
  @param context:SDK上下文，包括EGISSecurityContextHostURL，EGISSecurityContextLisenceKey，EGISSecurityContextPartnerCodeKey，EGISSecurityContextSDKTestMode
  completionBlock:初始化完成后的异步回调
  context为nil时，不改变原有的值
