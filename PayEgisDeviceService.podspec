@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "superrepublic" => "superrepublic@163.com" }
   s.platform     = :ios, '8.0'
-  s.source       = { :git => "https://github.com/PayEgis/PayEgisDeviceService.git", :tag => "5.4.6"  }
+  s.source       = { :git => "https://github.com/PayEgis/PayEgisDeviceService.git", :tag => "5.4.7"  }
   # s.source_files  = "Classes/*.framework"
   s.vendored_frameworks   = 'Classes/*.framework'
   s.resources = "resource/PayegisDID.bundle"
