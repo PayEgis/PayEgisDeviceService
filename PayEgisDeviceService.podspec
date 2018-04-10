@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PayEgisDeviceService"
-  s.version      = "5.4.7"
+  s.version      = "5.4.8"
   s.summary      = "PayEgis设备指纹"
   s.description  = <<-DESC
   通过获取上网设备的软件、硬件、行为等多层次指纹信息生成全球唯一的设备ID，为每一个入网设备提供虚拟空间的“身份证”。
