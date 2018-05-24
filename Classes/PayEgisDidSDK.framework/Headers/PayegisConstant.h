@@ -143,7 +143,8 @@ enum
     PayegisSecurityErrorCode_Network   = 100,         //网络错误
     PayegisSecurityErrorCode_Common    = 101,         //普通错误
     PayegisSecurityErrorCode_Tag       = 103,         //TAG输入非法
-    PayegisSecurityErrorCode_DATATYPE  = 104          //数据格式错误
+    PayegisSecurityErrorCode_DATATYPE  = 104,          //数据格式错误
+    PayegisSecurityErrorCode_DIDFailed = 406           //未获取DID服务
 };
 
 @interface PayegisConstant : NSObject
