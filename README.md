@@ -127,10 +127,11 @@ NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContext
 ```
 * 示例
 
-```
+```Objective-C
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-[PayegisEventCenter trackStart];
-return YES;
+    [PayegisEventCenter trackStart];
+    return YES;
 }
 ```
 **2.配置缓存策略**
@@ -150,13 +151,13 @@ PGSUplodStrategyBatch | 批量上报，达到缓存临界值时触发发送
 
 * 示例
 
-```
+```Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 ...
-[PayegisEventCenter trackStart];
-[PayegisEventCenter setUplodStrategy:PGSUplodStrategyBatch];
-[PayegisEventCenter sharedInstance].batchEventCount = 3;
-return YES;
+    [PayegisEventCenter trackStart];
+    [PayegisEventCenter setUplodStrategy:PGSUplodStrategyBatch];
+    [PayegisEventCenter sharedInstance].batchEventCount = 3;
+    return YES;
 }
 ```
 **3.账号相关**
@@ -177,12 +178,12 @@ PgsOwnAcc | 自有账号
 PgsOthAcc | 其他账号（第三方登录生成）
 * 示例
 
-```
+```Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 ...
-[PayegisEventCenter trackStart];
-[PayegisEventCenter setAccount:@"246531" type:PgsOwnAcc];
-return YES;
+    [PayegisEventCenter trackStart];
+    [PayegisEventCenter setAccount:@"246531" type:PgsOwnAcc];
+    return YES;
 }
 ```
 **4.统计页面时长**
@@ -206,13 +207,13 @@ return YES;
 ```
 * 示例
 
-```
+```Objective-C
 -(void)viewWillAppear:(BOOL)animated{
-[PayegisEventCenter trackVCBegin:pageName];
+    [PayegisEventCenter trackVCBegin:pageName];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
-[PayegisEventCenter trackVCEnd:pageName];
+    [PayegisEventCenter trackVCEnd:pageName];
 }
 ```
 
@@ -234,12 +235,12 @@ return YES;
 ```
 * 示例
 
-```
+```Objective-C
 - (void)applicationWillResignActive:(UIApplication *)application {
-[PayegisEventCenter trackAppEnd];
+    [PayegisEventCenter trackAppEnd];
 }
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-[PayegisEventCenter trackAppBegin];
+    [PayegisEventCenter trackAppBegin];
 }
 ```
 
@@ -247,7 +248,7 @@ return YES;
 
 * 过滤敏感，色情内容
 
-```
+```Objective-C
 /**
 文本过滤
 
@@ -258,13 +259,13 @@ return YES;
 ```
 * 示例
 
-```
+```Objective-C
 [PayegisEventCenter textFilter:self.textView.text filter:^(BOOL isPass) {
-if (isPass) {
-//过滤通过
-}
-else{
-}
+    if (isPass) {
+      //过滤通过
+    }
+    else{
+    }
 }];
 ```
 
