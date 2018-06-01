@@ -2,7 +2,7 @@
 PayEgis设备指纹官方SDK
 
 
-<font color=#FF450 size=3 >v5.4.6</font>
+<font color=#FF450 size=3 >v5.4.9</font>
 ## <font color=#le90ff size=4 >概要介绍</font>
 通付盾提供的设备指纹是一种基于网籍库的设备凭证识别技术，通过快速获取上网设备的软件、硬件、网络等多层次指纹信息，经过一定的复杂规则算法，为每一台入网设备生成跨平台的唯一标识设备ID，该设备指纹识别服务简称为DeviceId服务。通付盾设备指纹 SDK 支持多种终端类型，包括：Web、Android、iOS等多种类型。
 设备指纹服务接口包括：设备指纹采集接口和设备指纹查询接口。设备指纹的采集可通过WEB端JS集成、iOS SDK集成、Android SDK集成三种方式实现接口调用。具体集成方法可分别参考《通付盾设备指纹前端集成手册--Web》、《通付盾设备指纹前端集成手册--iOS》和《通付盾设备指纹前端集成手册--Android》。
@@ -112,7 +112,7 @@ NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContext
 那么同样的方法把相关的库从Xcode9的frameworks 目录下找到相关库添加到Xcode8目录下面 
 
 #
-# 1.3.7 事件上报<span id= "jump137">
+# 事件上报<span id= "jump137">
 
 
 **1.开启事件上报**
@@ -243,7 +243,7 @@ return YES;
 }
 ```
 
-## 1.3.8 内容过滤<span id= "jump138">
+## 内容过滤<span id= "jump138">
 
 * 过滤敏感，色情内容
 
