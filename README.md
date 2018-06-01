@@ -137,7 +137,7 @@ NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContext
 **2.配置缓存策略**
 * 在开启事件上报之后调用
 
-```
+```Objective-C
 /**
 配置缓存策略
 @param strategy 策略枚举值
@@ -164,7 +164,7 @@ PGSUplodStrategyBatch | 批量上报，达到缓存临界值时触发发送
 
 * 开启事件上报之后可以配置上报账号相关信息
 
-```
+```Objective-C
 /**
 上报账号对应实时数据中的新增账号数字段
 @param account 账号名
@@ -189,7 +189,7 @@ PgsOthAcc | 其他账号（第三方登录生成）
 **4.统计页面时长**
 * 统计页面的使用时间
 
-```
+```Objective-C
 /**
 标记一次页面访问的开始
 此接口需要跟trackVCEnd配对使用
@@ -220,7 +220,7 @@ PgsOthAcc | 其他账号（第三方登录生成）
 **5.APP使用时长**
 * 统计app在前台的时间
 
-```
+```Objective-C
 /**
 开始统计使用时长
 建议在App进入前台时调用
