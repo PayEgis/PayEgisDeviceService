@@ -111,7 +111,162 @@ NSDictionary *context=@{PayegisSecurityContextAppId:appid,PayegisSecurityContext
 如果加进去了可能还会遇到 framework not found IOSurface for architecture armv7
 那么同样的方法把相关的库从Xcode9的frameworks 目录下找到相关库添加到Xcode8目录下面 
 
+#
+# 1.3.7 事件上报<span id= "jump137">
 
+
+**1.开启事件上报**
+* 事件上报类的初始化，在设备指纹初始化之后调用
+
+```
+/**
+开启事件上报
+*/
++ (void)trackStart;
+
+```
+* 示例
+
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+[PayegisEventCenter trackStart];
+return YES;
+}
+```
+**2.配置缓存策略**
+* 在开启事件上报之后调用
+
+```
+/**
+配置缓存策略
+@param strategy 策略枚举值
+*/
++ (void)setUplodStrategy:(PGSUplodStrategy)strategy;
+```
+参数 | 含义
+------------- | -------------
+PGSUplodStrategyRealTime | 实时上报
+PGSUplodStrategyBatch | 批量上报，达到缓存临界值时触发发送
+
+* 示例
+
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+...
+[PayegisEventCenter trackStart];
+[PayegisEventCenter setUplodStrategy:PGSUplodStrategyBatch];
+[PayegisEventCenter sharedInstance].batchEventCount = 3;
+return YES;
+}
+```
+**3.账号相关**
+
+* 开启事件上报之后可以配置上报账号相关信息
+
+```
+/**
+上报账号对应实时数据中的新增账号数字段
+@param account 账号名
+@param type 账号类型
+*/
++ (void)setAccount:(NSString *)account type:(PGSAccountType)type;
+```
+参数 | 含义
+------------- | -------------
+PgsOwnAcc | 自有账号
+PgsOthAcc | 其他账号（第三方登录生成）
+* 示例
+
+```
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+...
+[PayegisEventCenter trackStart];
+[PayegisEventCenter setAccount:@"246531" type:PgsOwnAcc];
+return YES;
+}
+```
+**4.统计页面时长**
+* 统计页面的使用时间
+
+```
+/**
+标记一次页面访问的开始
+此接口需要跟trackVCEnd配对使用
+多次开始以第一次开始的时间为准
+@param name 页面名
+*/
++ (void)trackVCBegin:(NSString *)name;
+/**
+标记一次页面访问的结束
+此接口需要跟trackVCBegin配对使用
+多次结束以第一次结束的时间为准
+@param name 页面名字
+*/
++ (void)trackVCEnd:(NSString *)name;
+```
+* 示例
+
+```
+-(void)viewWillAppear:(BOOL)animated{
+[PayegisEventCenter trackVCBegin:pageName];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+[PayegisEventCenter trackVCEnd:pageName];
+}
+```
+
+**5.APP使用时长**
+* 统计app在前台的时间
+
+```
+/**
+开始统计使用时长
+建议在App进入前台时调用
+*/
++ (void)trackAppBegin;
+
+/**
+结束统计使用时长
+建议在App离开前台时调用
+*/
++ (void)trackAppEnd;
+```
+* 示例
+
+```
+- (void)applicationWillResignActive:(UIApplication *)application {
+[PayegisEventCenter trackAppEnd];
+}
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+[PayegisEventCenter trackAppBegin];
+}
+```
+
+## 1.3.8 内容过滤<span id= "jump138">
+
+* 过滤敏感，色情内容
+
+```
+/**
+文本过滤
+
+@param text 审核的文本
+@param filterEnd 是否成功的回调
+*/
++ (void)textFilter:(NSString *)text filter:(filterEnd)filterEnd;
+```
+* 示例
+
+```
+[PayegisEventCenter textFilter:self.textView.text filter:^(BOOL isPass) {
+if (isPass) {
+//过滤通过
+}
+else{
+}
+}];
+```
 
 
 
