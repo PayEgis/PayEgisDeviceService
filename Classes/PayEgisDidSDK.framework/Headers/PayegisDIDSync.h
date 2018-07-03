@@ -50,6 +50,15 @@ typedef void (^PayegisSecurityUninitCompletionBlockSync)(NSError *error);
 + (NSDictionary *)context;
 
 /**
+ 是否开启威胁感知
+ 
+  需要在initWithAppId方法之前调用
+ 
+ @param isOpen Yes 开启 No 关闭
+ */
++(void) setOpenMonitor:(BOOL) isOpen;
+
+/**
  SDK初始化
  @param context:SDK上下文，包括EGISSecurityContextHostURL，EGISSecurityContextLisenceKey，EGISSecurityContextPartnerCodeKey，EGISSecurityContextSDKTestMode
  completionBlock:初始化完成后的异步回调

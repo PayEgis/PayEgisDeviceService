@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PayEgisDeviceService"
-  s.version      = "5.4.9"
+  s.version      = "5.6.5"
   s.summary      = "PayEgis设备指纹"
   s.description  = <<-DESC
   通过获取上网设备的软件、硬件、行为等多层次指纹信息生成全球唯一的设备ID，为每一个入网设备提供虚拟空间的“身份证”。
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { "superrepublic" => "superrepublic@163.com" }
   s.platform     = :ios, '8.0'
-  s.source       = { :git => "https://github.com/PayEgis/PayEgisDeviceService.git", :tag => "5.4.9"  }
+  s.source       = { :git => "https://github.com/PayEgis/PayEgisDeviceService.git", :tag => "5.6.5"  }
   # s.source_files  = "Classes/*.framework"
   s.vendored_frameworks   = 'Classes/*.framework'
   s.resources = "resource/PayegisDID.bundle"
