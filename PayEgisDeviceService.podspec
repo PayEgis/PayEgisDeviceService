@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    DESC
   s.homepage     = "https://github.com/PayEgis/PayEgisDeviceService"
   s.license      = "MIT"
-  s.author       = { "jiehong.pan" => "jiehong.pan@tongfudun.com" }
+  s.author       = { "superrepublic" => "superrepublic@163.com" }
   s.platform     = :ios, '8.0'
   s.source       = { :git => "https://github.com/PayEgis/PayEgisDeviceService.git", :tag => "7.0"  }
   # s.source_files  = "Classes/*.framework"
