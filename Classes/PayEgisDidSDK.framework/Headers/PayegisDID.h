@@ -17,7 +17,6 @@ typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
 
 @interface PayegisDID : NSObject
 
-
 /**
  实例变量
  @return PayegisDID单例
@@ -40,6 +39,12 @@ typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
  @param completionBlock 服务器响应的回调
  */
 +(void)initWithAppId:(NSString *)appId AppKey:(NSString *)appKey completionBlock:(PayegisSecurityInitCompletionBlock)completionBlock;
+
+/**
+SDK自动make并返回SessionID方法
+@param completionBlock 服务器响应的回调
+*/
++(NSString *)getSessionIdWithCompletionBlock:(PayegisSecurityInitCompletionBlock)completionBlock;
 
 /**
  SDK设备指纹业务埋点方法
