@@ -13,9 +13,10 @@
 
 typedef void (^PayegisSecurityInitCompletionBlock)(NSError *error);
 typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
-
+typedef void (^PayegisSecurityMonitorBlock)(NSDictionary *error);
 
 @interface PayegisDID : NSObject
+
 
 /**
  实例变量
@@ -41,12 +42,6 @@ typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
 +(void)initWithAppId:(NSString *)appId AppKey:(NSString *)appKey completionBlock:(PayegisSecurityInitCompletionBlock)completionBlock;
 
 /**
-SDK自动make并返回SessionID方法
-@param completionBlock 服务器响应的回调
-*/
-+(NSString *)getSessionIdWithCompletionBlock:(PayegisSecurityInitCompletionBlock)completionBlock;
-
-/**
  SDK设备指纹业务埋点方法
  @param sessionId 关联ID，由用户构造
  @param scence 业务场景
@@ -59,13 +54,35 @@ SDK自动make并返回SessionID方法
 + (void)setContext:(NSDictionary *)context;
 
 /**
+ 获取客户自定义参数
+ */
++ (NSDictionary *)customContext;
+
+/**
+ 设置客户自定义参数
+ */
++ (void)setCustomContext:(NSDictionary *)context;
+
+/**
  获取SDK上下文
  */
 + (NSDictionary *)context;
 
+
 /**
- SDK初始化 已废弃
- @param context:SDK上下文，包括EGISSecurityContextHostURL，EGISSecurityContextLisenceKey，EGISSecurityContextPartnerCodeKey，EGISSecurityContextSDKTestMode
+ 是否开启威胁感知
+ 
+ 需要在initWithAppId方法之前调用
+ 
+ @param isOpen Yes 开启 No 关闭
+ */
++(void) setOpenMonitor:(BOOL) isOpen securityMonitorBlock:(PayegisSecurityMonitorBlock)securityMonitorBlock;
+//+(void) setSecurityMonitorBlock:(PayegisSecurityMonitorBlock)completionBlock;
+-(PayegisSecurityMonitorBlock) getSecurityMonitorBlock;
+
+/**
+ SDK初始化
+ @param context:SDK上下文，包括PayegisSecurityContextAppId，PayegisSecurityContextAppKey，PayegisSecurityContextHostURL，PayegisSecurityContextSession，PayegisSecurityContextTag
  completionBlock:初始化完成后的异步回调
  context为nil时，不改变原有的值
  */

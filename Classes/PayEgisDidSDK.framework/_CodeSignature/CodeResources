@@ -4,17 +4,29 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Headers/PESMonitorSDK.h</key>
+		<data>
+		u+lMwIPQwcPbZAU4x8KVtE8Ai5Y=
+		</data>
 		<key>Headers/PayegisConstant.h</key>
 		<data>
-		MpM7XoPiYBEEMdQXgH7/NkeLXdY=
+		o+RDoPxg6ycEdJ56lOsin4cuwbg=
+		</data>
+		<key>Headers/PayegisCrashHandler.h</key>
+		<data>
+		jEM80zRzfx85oWgLQsDjSc0yfsI=
 		</data>
 		<key>Headers/PayegisDID.h</key>
 		<data>
-		sV5MiqOs6nLE/SsCah1+2ocY85Q=
+		Y6oWIGrdSSXgkzQSgkamH7zkwQk=
+		</data>
+		<key>Headers/PayegisEventCenter.h</key>
+		<data>
+		9tD7BrTsy/kJmwOCHBK3NMfbyog=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		5X1i20i+2f6sWMjqNnnyCrS85/w=
+		lnp52ciPYaWc/DtO+OoM9qYw4aA=
 		</data>
 		<key>https.cer</key>
 		<data>
@@ -23,26 +35,59 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/PESMonitorSDK.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			u+lMwIPQwcPbZAU4x8KVtE8Ai5Y=
+			</data>
+			<key>hash2</key>
+			<data>
+			MYz/p0OzY0TfTj5lvyEjcJGLS6PQ1efRRP2P1Pwi1tE=
+			</data>
+		</dict>
 		<key>Headers/PayegisConstant.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MpM7XoPiYBEEMdQXgH7/NkeLXdY=
+			o+RDoPxg6ycEdJ56lOsin4cuwbg=
 			</data>
 			<key>hash2</key>
 			<data>
-			rVQlPIPHsk3Xu0IqO9lwePzGjb/OcFTWmlPh18D9PCc=
+			djVycUrK5yZPGYdkOvGZ6e7MgnqYURm8Io9vu3KDRMc=
+			</data>
+		</dict>
+		<key>Headers/PayegisCrashHandler.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jEM80zRzfx85oWgLQsDjSc0yfsI=
+			</data>
+			<key>hash2</key>
+			<data>
+			j54JNe3tg0HBxKR0m+JlDX5xo8Sl4nQrBiv74AC6Yog=
 			</data>
 		</dict>
 		<key>Headers/PayegisDID.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sV5MiqOs6nLE/SsCah1+2ocY85Q=
+			Y6oWIGrdSSXgkzQSgkamH7zkwQk=
 			</data>
 			<key>hash2</key>
 			<data>
-			GRI2QFv+o5af/YH2fzZtwIUl0r5irVYNEWPn33Ttx0I=
+			d1Ek5DnlOd0XRVK8OcEnEhQ8LR2jNHFNra18YU5EhB4=
+			</data>
+		</dict>
+		<key>Headers/PayegisEventCenter.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			9tD7BrTsy/kJmwOCHBK3NMfbyog=
+			</data>
+			<key>hash2</key>
+			<data>
+			livOtKKVlkVu7EjYK6QmFfkNIoLIYyzXgY0/DqDpedU=
 			</data>
 		</dict>
 		<key>https.cer</key>
