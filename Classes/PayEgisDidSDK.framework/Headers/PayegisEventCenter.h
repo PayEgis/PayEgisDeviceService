@@ -143,7 +143,12 @@ typedef void (^filterEnd)(BOOL isPass);
  结束统计使用时长
  建议在App离开前台时调用
  */
-+ (void)trackAppEnd;
+//+ (void)trackAppEnd;
+
+/**
+ 上传启动、退出事件
+ */
+- (void)uploadAppStateEvents;
 
 #pragma mark - 内容过滤
 
@@ -156,5 +161,8 @@ typedef void (^filterEnd)(BOOL isPass);
  @param filterEnd 是否成功的回调
  */
 + (void)textFilter:(NSString *)text filter:(filterEnd)filterEnd;
-
+/**
+上报错误日志
+*/
+- (void)crashReporter;
 @end

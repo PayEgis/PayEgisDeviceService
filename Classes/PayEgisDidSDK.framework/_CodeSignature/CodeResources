@@ -18,15 +18,15 @@
 		</data>
 		<key>Headers/PayegisDID.h</key>
 		<data>
-		Y6oWIGrdSSXgkzQSgkamH7zkwQk=
+		DuClLC1Li3G4HIuH8mbToeaQc9M=
 		</data>
 		<key>Headers/PayegisEventCenter.h</key>
 		<data>
-		9tD7BrTsy/kJmwOCHBK3NMfbyog=
+		swbG34M0GInMyZwj6AVYvjsE3J4=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lnp52ciPYaWc/DtO+OoM9qYw4aA=
+		aKxrZUkeMisoiNc12ysQIz6ElxE=
 		</data>
 		<key>https.cer</key>
 		<data>
@@ -72,22 +72,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y6oWIGrdSSXgkzQSgkamH7zkwQk=
+			DuClLC1Li3G4HIuH8mbToeaQc9M=
 			</data>
 			<key>hash2</key>
 			<data>
-			d1Ek5DnlOd0XRVK8OcEnEhQ8LR2jNHFNra18YU5EhB4=
+			v6dO5nLliNIiX6rp7xa9Fe1Lhll0fFZIvMDAHJFOXps=
 			</data>
 		</dict>
 		<key>Headers/PayegisEventCenter.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9tD7BrTsy/kJmwOCHBK3NMfbyog=
+			swbG34M0GInMyZwj6AVYvjsE3J4=
 			</data>
 			<key>hash2</key>
 			<data>
-			livOtKKVlkVu7EjYK6QmFfkNIoLIYyzXgY0/DqDpedU=
+			vizs9wLqLuhEPNeJDAe1lLg4Lw7ns+8FkVsaz9lX6xc=
 			</data>
 		</dict>
 		<key>https.cer</key>
@@ -104,7 +104,7 @@
 	</dict>
 	<key>rules</key>
 	<dict>
-		<key>^</key>
+		<key>^.*</key>
 		<true/>
 		<key>^.*\.lproj/</key>
 		<dict>
@@ -135,24 +135,12 @@
 			<key>weight</key>
 			<real>11</real>
 		</dict>
-		<key>^</key>
-		<dict>
-			<key>weight</key>
-			<real>20</real>
-		</dict>
 		<key>^(.*/)?\.DS_Store$</key>
 		<dict>
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
 			<real>2000</real>
-		</dict>
-		<key>^(Frameworks|SharedFrameworks|PlugIns|Plug-ins|XPCServices|Helpers|MacOS|Library/(Automator|Spotlight|LoginItems))/</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^.*</key>
 		<true/>
@@ -188,13 +176,6 @@
 			<true/>
 			<key>weight</key>
 			<real>20</real>
-		</dict>
-		<key>^[^/]+$</key>
-		<dict>
-			<key>nested</key>
-			<true/>
-			<key>weight</key>
-			<real>10</real>
 		</dict>
 		<key>^embedded\.provisionprofile$</key>
 		<dict>

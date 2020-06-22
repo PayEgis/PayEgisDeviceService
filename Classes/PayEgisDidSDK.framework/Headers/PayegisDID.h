@@ -16,7 +16,8 @@ typedef void (^PayegisSecurityUninitCompletionBlock)(NSError *error);
 typedef void (^PayegisSecurityMonitorBlock)(NSDictionary *error);
 
 @interface PayegisDID : NSObject
-
+@property(nonatomic, assign) BOOL makeFinished;
+@property(nonatomic, assign) BOOL isForeground;
 
 /**
  实例变量
@@ -103,6 +104,6 @@ typedef void (^PayegisSecurityMonitorBlock)(NSDictionary *error);
 + (void)setIsBgTry:(BOOL)bgTry;
 + (BOOL)getBgTry;
 
-
++ (void)uploadsdkInfo:(NSDictionary *)dic;
 
 @end
